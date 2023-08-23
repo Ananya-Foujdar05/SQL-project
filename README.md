@@ -52,7 +52,7 @@ Table 1 = Data1
 
    Q9. What are the top and bottom 3 states with average literacy rate?
 
-   drop table if exists #topstates
+   `drop table if exists #topstates
  create table #topstates
  ( state nvarchar(255),
  topstates float
