@@ -57,12 +57,12 @@ Table 1 = Data1
  ( state nvarchar(255),
  topstates float
 
- )`
+ )
 
  insert into #topstates
- select top 3 state, round(AVG(literacy), 0) as Avg_literacy from portfolio_project..Data1 group by state order by Avg_literacy desc;
+ `select top 3 state, round(AVG(literacy), 0) as Avg_literacy from portfolio_project..Data1 group by state order by Avg_literacy desc;`
 
- select * from #topstates;
+`select * from #topstates;`
 
 
 
@@ -74,11 +74,11 @@ Table 1 = Data1
  )
 
  insert into #bottomstates
- select top 3 state, round(AVG(literacy), 0) as Avg_literacy from portfolio_project..Data1 group by state order by Avg_literacy;
+ `select top 3 state, round(AVG(literacy), 0) as Avg_literacy from portfolio_project..Data1 group by state order by Avg_literacy;`
 
- select * from #bottomstates;
+ `select * from #bottomstates;`
 
-select * from (select * from #topstates) a
+`select * from (select * from #topstates) a
 
  union
 
