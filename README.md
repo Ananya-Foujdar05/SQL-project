@@ -52,7 +52,7 @@ Table 1 = Data1
 
    Q9. What are the top and bottom 3 states with average literacy rate?
 
-   `drop table if exists #topstates
+   drop table if exists #topstates
  create table #topstates
  ( state nvarchar(255),
  topstates float
@@ -60,6 +60,7 @@ Table 1 = Data1
  )
 
  insert into #topstates
+ 
  `select top 3 state, round(AVG(literacy), 0) as Avg_literacy from portfolio_project..Data1 group by state order by Avg_literacy desc;`
 
 `select * from #topstates;`
@@ -74,15 +75,16 @@ Table 1 = Data1
  )
 
  insert into #bottomstates
+ 
  `select top 3 state, round(AVG(literacy), 0) as Avg_literacy from portfolio_project..Data1 group by state order by Avg_literacy;`
 
  `select * from #bottomstates;`
 
-`select * from (select * from #topstates) a
+`select * from (select * from #topstates) a`
 
- union
+ `union`
 
-select* from (select * from #bottomstates) b;`
+`select* from (select * from #bottomstates) b;`
 
 Q10. What are the states starting with letter a or b?
 
