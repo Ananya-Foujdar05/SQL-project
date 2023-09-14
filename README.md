@@ -57,7 +57,7 @@ Table 1 = Data1
  ( state nvarchar(255),
  topstates float
 
- )
+ )`
 
  insert into #topstates
  select top 3 state, round(AVG(literacy), 0) as Avg_literacy from portfolio_project..Data1 group by state order by Avg_literacy desc;
