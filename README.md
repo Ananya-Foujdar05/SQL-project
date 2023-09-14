@@ -1,6 +1,8 @@
 # SQL-project
 
 ## Data Source:
+[Dataset1](https://github.com/Ananya-Foujdar05/SQL-project/blob/main/Dataset1.xlsx)
+[Dataset2](https://github.com/Ananya-Foujdar05/SQL-project/blob/main/Dataset2.xlsx)
 
 Table 1 = Data1
 
@@ -52,14 +54,14 @@ Table 1 = Data1
 
    Q9. What are the top and bottom 3 states with average literacy rate?
 
-   drop table if exists #topstates
- create table #topstates
- ( state nvarchar(255),
- topstates float
+   `drop table if exists #topstates`
+ `create table #topstates`
+ `( state nvarchar(255),`
+ `topstates float`
 
- )
+ `)`
 
- insert into #topstates
+ `insert into #topstates`
  
  `select top 3 state, round(AVG(literacy), 0) as Avg_literacy from portfolio_project..Data1 group by state order by Avg_literacy desc;`
 
@@ -67,14 +69,14 @@ Table 1 = Data1
 
 
 
-  drop table if exists #bottomstates
- create table #bottomstates
- ( state nvarchar(255),
- bottomstates float
+  `drop table if exists #bottomstates`
+ `create table #bottomstates`
+ `( state nvarchar(255),`
+ `bottomstates float`
 
- )
+ `)`
 
- insert into #bottomstates
+ `insert into #bottomstates`
  
  `select top 3 state, round(AVG(literacy), 0) as Avg_literacy from portfolio_project..Data1 group by state order by Avg_literacy;`
 
